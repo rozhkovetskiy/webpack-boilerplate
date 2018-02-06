@@ -4,7 +4,8 @@ const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractPlugin = new ExtractTextPlugin({ filename: './assets/css/app.css' });
+const extractPlugin = new ExtractTextPlugin({ filename: './assets/css/[name]-one.css' });
+const extractLESS = new ExtractTextPlugin({ filename: './assets/css/[name]-two.css' });
 
 const config = {
 
@@ -13,7 +14,7 @@ const config = {
 
   entry: {
     // relative path declaration
-    app: './app.js'
+    app: './app.js',
   },
 
   output: {
@@ -51,6 +52,21 @@ const config = {
           fallback: 'style-loader'
         })
       },
+      // less-loader
+      {
+        test: /\.less$/,
+        include: [path.resolve(__dirname, 'src', 'assets', 'less')],
+        use: extractLESS.extract({
+          use: [{
+            loader: "css-loader" // translates CSS into CommonJS
+          }, {
+            loader: "less-loader", // compiles Less to CSS
+            options: {
+              sourceMap: true
+            }
+          }]
+        })
+      },
       // file-loader(for images)
       { test: /\.(jpg|png|gif|svg)$/, use: [ { loader: 'file-loader', options: { name: '[name].[ext]', outputPath: './assets/media/' } } ] },
       // file-loader(for fonts)
@@ -66,7 +82,8 @@ const config = {
       template: 'index.html'
     }),
     // extract-text-webpack-plugin instance
-    extractPlugin
+    extractPlugin,
+    extractLESS
   ],
 
   devServer: {

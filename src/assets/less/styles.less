@@ -1,0 +1,624 @@
+//@font-face {
+//  font-family: "ITCAvantGardeStd-BkCn";
+//  src: url("./assets/fonts/ITCAvantGardeStd-BkCn.otf");
+//}
+//@font-face {
+//  font-family: "ITCAvantGardeStd-DemiCn";
+//  src: url("./assets/fonts/ITCAvantGardeStd-DemiCn.otf");
+//}
+//@font-face {
+//  font-family: "ITCAvantGardeStd-MdCn";
+//  src: url("./assets/fonts/ITCAvantGardeStd-MdCn.otf");
+//}
+//@font-face {
+//  font-family: "ITCAvantGardeStd-BoldCn";
+//  src: url("./assets/fonts/ITCAvantGardeStd-BoldCn.otf");
+//}
+
+body{
+  background: black;
+
+  &.modal-open {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+.header{
+  padding-top: 17px;
+  margin-bottom: 56px;
+}
+.logo{
+  text-align: center;
+  margin-bottom: 31px;
+}
+.logo-mobile{
+  display: none;
+}
+.main-title{
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  font-family: "ITCAvantGardeStd-BkCn";
+  span{
+    display: block;
+    margin-top: -10px;
+    margin-left: 19px;
+    letter-spacing: 18px;
+    &:last-of-type{
+      margin-bottom: 5px;
+    }
+  }
+
+  &.black {
+    color: #000;
+  }
+
+  &:before{
+    content:"";
+    display: block;
+    height: 1px;
+    width:212px;
+    background-color: rgba(255, 255, 255, 0.28);
+    margin: auto;
+  }
+  &:after{
+    content:"";
+    display: block;
+    height: 1px;
+    width:212px;
+    background-color: rgba(255, 255, 255, 0.28);
+    margin: auto;
+  }
+  img{
+    margin-bottom: -3px;
+  }
+}
+.under-title{
+  color: white;
+  width: 685px;
+  margin: auto;
+  text-align: center;
+  font-family: "ITCAvantGardeStd-BkCn";
+  &>span{
+    display: inline-block;
+    margin-top: 46px;
+    margin-left: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  p{
+    margin-top: -2px;
+  }
+}
+.container{
+  width: 1105px;
+  border: 6px solid white;
+  margin: auto;
+  box-sizing: border-box;
+  position: relative;
+  left: -26px;
+  padding-bottom: 85px;
+  &:after{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+  }
+}
+.card{
+  width: 232px;
+  height:358px;
+  box-sizing: border-box;
+  border: 5px solid #eed99b;
+  text-align: center;
+  padding-top: 23px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+  position: relative;
+  &:after{
+    content: "+";
+    display: block;
+    width: 39px;
+    height: 41px;
+    background-color: #eed99b;
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    box-sizing: border-box;
+    padding-left: 6px;
+    padding-bottom: 0px;
+    font-size: 40px;
+    font-family: "ITCAvantGardeStd-BkCn";
+  }
+  &:hover{
+    & .card-hover{
+      width:232px;
+      height: 358px;
+    }
+    &:after{
+      opacity: 0.3;
+    }
+  }
+}
+.porfum-title{
+  display: none;
+}
+.card-hover{
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -5px;
+  left: -5px;
+  background-color: rgba(255,255,255,0.7);
+}
+.card-btn{
+  color: white;
+  text-transform: uppercase;
+  background-color: black;
+  text-decoration: none;
+  font-size: 12px;
+  position: absolute;
+  display: block;
+  bottom: 121px;
+  left: 35px;
+  padding: 9px 22px;
+  font-family: "ITCAvantGardeStd-DemiCn";
+  z-index: 5;
+}
+.grid-item{
+  margin-right: 11px;
+
+}
+.card-title{
+  font-family: "ITCAvantGardeStd-DemiCn";
+  color: white;
+  margin-top: 23px;
+  span:first-of-type{
+    text-transform: uppercase;
+    display: block;
+    padding: 0 14px;
+    font-size: 14px;
+    margin-bottom: -4px;
+  }
+  span:last-of-type{
+    font-style: italic;
+    font-size: 14px;
+  }
+  .card-number{
+    font-family: "ITCAvantGardeStd-BkCn";
+    margin-top: 5px;
+    margin-left: 3px;
+    font-size: 14px;
+  }
+}
+.card-col {
+  display: flex;
+  flex-direction: column;
+  &:nth-of-type(2){
+    margin-top: 49px;
+  }
+  &:nth-of-type(3){
+    //margin-top: 272px;
+  }
+  &:not(:last-of-type){
+    margin-right: 23px;
+  }
+}
+.img-cosmetics{
+  left: 0px;
+  top: -513px;
+  position: absolute;
+}
+card{
+  display: flex;
+  flex-direction: column;
+}
+.card-desc{
+  color: white;
+  height: 221px;
+  height: 221px;
+  padding-top: 12px;
+  span:first-of-type{
+    position: relative;
+    display: block;
+    font-family: "Didot-Italic";
+    text-transform: uppercase;
+    padding-left: 7px;
+    font-size: 51px;
+    &:after{
+      content: "";
+      height: 1px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom:3px;
+      left:0;
+      background-color: white;
+    }
+  }
+  span:last-of-type{
+    display: block;
+    padding-top: 16px;
+    font-family: "ITCAvantGardeStd-BkCn";
+  }
+  img{
+    display: none;
+  }
+}
+.card-white{
+  background-color: white;
+  border-color: white;
+  .card-title{
+    color: black;
+  }
+  &:after{
+    width: 45px;
+    height: 45px;
+    bottom:-5px;
+    right:-5px;
+    padding-left: 3px;
+  }
+}
+.card-heart{
+  background-color: #eed99b;
+  &:after{
+    display: none;
+  }
+}
+.card-desc-mobile{
+  display: none;
+}
+.card-title-heart{
+  font-family: "ITCAvantGardeStd-MdCn";
+  color: black;
+}
+.container-cards{
+  display: flex;
+}
+.img-cosmetics-left{
+  position: absolute;
+  top: -632px;
+  left: -830px;
+}
+.card-pink{
+  border-color: #ffd4df;
+  &:after{
+    background-color: #ffd4df;
+  }
+}
+.card-col-img{
+  margin-right: -247px !important;
+}
+.card-empty-one{
+  height: 500px;
+  width: 232px;
+}
+.card-empty-two{
+  height: 186px;
+  width: 232px;
+}
+.grid {
+  list-style: none;
+  padding-left: 0;
+  &:first-of-type{
+    margin-bottom: 210px;
+  }
+}
+.grid-first{
+  z-index: 2;
+}
+.card-text{
+  color: white;
+  height: 290px;
+  width: 232px;
+  padding-top: 106px;
+  span{
+    display: block;
+    &:first-of-type{
+      font-style: italic;
+      text-transform: uppercase;
+      font-size: 58px;
+      position: relative;
+      margin-bottom: 20px;
+      &:after{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+        position: absolute;
+        bottom:5px;
+        left:0;
+      }
+    }
+    &:last-of-type{
+      font-family: "ITCAvantGardeStd-BkCn";
+    }
+  }
+}
+.footer{
+  position: relative;
+}
+.img-footer{
+  position: absolute;
+  top: -440px;
+  left: 82px;
+  z-index: -1;
+}
+.footer-logo{
+  padding-top: 460px;
+  text-align: center;
+  margin-bottom: 20px;
+  img{
+    height:33px;
+  }
+}
+.my-component{
+  position: relative;
+}
+.masonry{
+  padding: 62px 0 0 176px;
+}
+.social-title{
+  color: white;
+  text-align: center;
+  font-family: "ITCAvantGardeStd-BkCn";
+  margin-bottom: 7px;
+  span{
+    display: block;
+    font-size: 14px;
+    margin-bottom: 2px;
+    letter-spacing: 2.1px;
+  }
+}
+.social-icons{
+  text-align: center;
+}
+.social-icon{
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-left: 2px;
+  display: inline-block;
+}
+@media screen and (max-width:1200px){
+  .container{
+    width: 750px;
+    border: none;
+    left: 0;
+  }
+  .grid-cosmetics{
+    display: none;
+  }
+  .masonry{
+    padding: 0 0 0 65px;
+    margin-top: 46px;
+  }
+  .card-empty-one{
+    display: none;
+  }
+  .img-cosmetics-left, .card-text, .card-empty-two {
+    //display: none;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .card-desc-mobile{
+    display: block;
+    text-align: center;
+    color: white;
+    font-family: "Didot-Italic";
+    margin-top: -279px;
+    margin-left: 27px;
+    position: relative;
+    z-index: -1;
+    img{
+      width: 100%;
+    }
+    &>span:first-of-type{
+      position: relative;
+      display: block;
+      font-style: italic;
+      text-transform: uppercase;
+      font-size: 58px;
+      margin-top: -62px;
+      &:after{
+        content: "";
+        height: 1px;
+        width: 289px;
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 30.4%;
+        background-color: white;
+      }
+    }
+    p{
+      margin: 0;
+      font-size: 24px;
+      padding-top: 23px;
+      line-height: 1.1;
+      font-family: "ITCAvantGardeStd-BkCn";
+      span{
+        display: block;
+      }
+    }
+  }
+  .card-desc{
+    color:transparent;
+    height: 56px;
+    width: 292px;
+    span:first-of-type{
+      &:after{
+        display: none;
+      }
+    }
+  }
+  .card{
+    margin-right: 0;
+    width: 292px;
+    height: 451px;
+  }
+  .logo-desctop{
+    display: none;
+  }
+  .logo-mobile{
+    display: inline-block;
+  }
+  .main-title{
+    font-size: 61px;
+    span:first-of-type{
+      margin-top: -11px;
+      margin-left: 32px;
+      letter-spacing: 22px;
+    }
+    span:last-of-type{
+      margin-bottom: 2px;
+    }
+  }
+  .under-title{
+    margin-top: 51px;
+    &>span{
+      font-family: "ITCAvantGardeStd-DemiCn";
+      display: block;
+      margin-top: 0;
+      margin-left: 6px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-size: 47px;
+      margin-bottom: 0;
+      &:first-of-type{
+        margin-bottom: -6px;
+      }
+    }
+    p{
+      margin-top: 7px;
+      margin-left: 3px;
+      letter-spacing: 1px;
+      font-size: 22px;
+    }
+    p>span{
+      display: block;
+    }
+  }
+  .grid-item{
+    margin-right: 33px;
+  }
+  .grid{
+    //width:650px;
+    //margin: auto;
+    &:first-of-type{
+      margin-bottom: 0;
+    }
+  }
+  .card-text{
+    display: none;
+  }
+  .porfum-title{
+    display: block;
+    color: white;
+    margin-top: -423px;
+    text-align: center;
+    font-family: "Didot-Italic";
+    margin-bottom: 64px;
+    img{
+      width: 100%;
+    }
+    span{
+      display: block;
+      &:first-of-type{
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 58px;
+        position: relative;
+        margin-top: -111px;
+        margin-bottom: 20px;
+        &:after{
+          content: "";
+          height: 1px;
+          width: 289px;
+          display: block;
+          position: absolute;
+          bottom: 3px;
+          left: 32%;
+          background-color: white;
+        }
+      }
+      &:last-of-type{
+        font-family: "ITCAvantGardeStd-BkCn";
+      }
+    }
+  }
+  .grid{
+    //margin-left: 100px;
+  }
+  .img-footer{
+    top: -396px;
+    left: -103px;
+
+  }
+  .footer-logo{
+    padding-top: 483px;
+    margin-bottom: 44px;
+    text-align: center;
+    .logo-mobile{
+      height: 79px;
+    }
+  }
+  .social-title{
+    margin-bottom: 21px;
+    span:first-of-type{
+      font-size: 23px;
+    }
+    span:last-of-type{
+      font-size: 32px;
+      margin-top: 5px;
+    }
+  }
+  .social-icon{
+    width: 90px;
+    height: 90px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .grid-empty-three{
+    height: 232px !important;
+    width: 292px;
+  }
+  .card-pink{
+    margin-bottom: 38px;
+  }
+}
+@media screen and (max-width: 750px){
+  .container{
+    width: 100%;
+  }
+}
+
+/* Effect 2: Move Up */
+.grid.effect-2 li.animate {
+  -webkit-transform: translateY(300px);
+  transform: translateY(300px);
+  -webkit-animation: moveUp 0.65s ease forwards;
+  animation: moveUp 0.65s ease forwards;
+}
+
+@-webkit-keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveUp {
+  0% { }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}
+
